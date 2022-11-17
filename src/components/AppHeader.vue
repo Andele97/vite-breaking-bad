@@ -6,12 +6,12 @@ export default {
 
 <template>
   
-    <div class="container-fluid">
+    <div class="container-fluid p-3">
       <header>
         <div class="logo">
           <img src="../assets/img/Breaking_Bad_logo.svg" alt="">
         </div>
-        <h1></h1>
+        <h1 class="text-white ml-5">Breaking Bad Api</h1>
       </header>        
     </div>
 
@@ -20,13 +20,15 @@ export default {
 <style lang="scss" scoped>
 
   header {
-    height: 60px;
-    padding: 15px;
+    display: flex;
     .logo{
       height: 60px;
       img{
         height: 100%;
+        }
       }
+    h1{
+      margin-left: 20px;
     }
   }
 
