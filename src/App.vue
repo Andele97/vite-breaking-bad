@@ -18,16 +18,29 @@ export default {
     AppSearch,
     CharacterList
   },
-  methods: {
-    
+  methods:{
+    getCharacters(){
+      store.isLoaded = false;
+    axios.get(store.apiUrl)
+    .then( result => {
+      store.charactersListData = result.data
+      store.isLoaded = true;
+   })
+   .catch(error => {
+      console.log(error)
+   })
+  }
+  },
+  mounted(){
+    this.getCharacters()
   }
 }
 </script>
 
 <template>
-  <AppHeader />
+  <AppHeader title="Breaking Bad Api"/>
   <AppSearch />
-  <AppMain />
+  <CharacterList />
 </template>
 
 <style lang="scss">

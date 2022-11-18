@@ -1,6 +1,9 @@
 <script>
 export default {
-  name: 'AppHeader'
+  name: 'AppHeader',
+  props:{
+    title: String
+  }
 }
 </script>
 
@@ -11,7 +14,7 @@ export default {
         <div class="logo">
           <img src="../assets/img/Breaking_Bad_logo.svg" alt="">
         </div>
-        <h1 class="text-white ml-5">Breaking Bad Api</h1>
+        <h1 class="text-white ml-5">{{title}}</h1>
       </header>        
     </div>
 
