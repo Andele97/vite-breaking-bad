@@ -22,7 +22,7 @@ export default {
   
   <main class="container">
     <div class="found">
-      Found 62 characters
+      Found {{store.charactersListData.length}} characters
     </div>
     <div v-if="store.isLoaded" class="row d-flex justify-content-center">
     <CharacterCard
@@ -44,7 +44,6 @@ export default {
 
   .container{
     background-color: white;
-    min-height: 100vh;
     padding: 20px;
     .found{
       background-color: black;

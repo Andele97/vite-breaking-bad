@@ -6,7 +6,9 @@ export default {
 
 <template>
 
-  <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+  <div class="container">
+    <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+  </div>
 
 </template>
 
@@ -14,6 +16,13 @@ export default {
 <style lang="scss" scoped>
 
 @use '../styles/partials/vars' as *;
+
+  .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .lds-roller {
   display: inline-block;
   position: relative;

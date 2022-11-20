@@ -21,12 +21,18 @@ export default {
   methods:{
     getCharacters(){
       store.isLoaded = false;
-    axios.get(store.apiUrl)
-    .then( result => {
+      axios.get(store.apiUrl, {
+        params:{
+          name: store.characterToSearch,
+          category: store.categoryToSearch
+        }
+      })
+      .then( result => {
       store.charactersListData = result.data
       store.isLoaded = true;
    })
    .catch(error => {
+      store.charactersListData = [];
       console.log(error)
    })
   }
@@ -39,7 +45,7 @@ export default {
 
 <template>
   <AppHeader title="Breaking Bad Api"/>
-  <AppSearch />
+  <AppSearch @startSearch="getCharacters()" />
   <CharacterList />
 </template>
 

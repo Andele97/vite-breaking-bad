@@ -11,7 +11,10 @@ export default {
 
     <div class="ap-cards col-2">
       <div class="image">
-        <img :src="character.img" :alt="character.name">
+        <img :src="character.img" :alt="character.name" >
+        <div class="middle">
+          {{character.nickname}}
+        </div>
       </div>
       <div class="text">
         <h4>{{character.name}}</h4>
@@ -26,9 +29,37 @@ export default {
 
 @use '../styles/partials/vars' as *;
 
+.image{
+  width: 100%;
+  height: 69%;
+  position: relative;
+}
+
 img{
   width: 100%;
+  height: 99%;
 }
+
+.middle{
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  font-weight: bold;
+  font-size: 1.4em;
+  text-shadow: 2px 2px 4px black;
+}
+
+.ap-cards:hover .middle {
+  opacity: 1;
+}
+
 .ap-cards{
       background-color: rgb(46, 58, 70);
       width: 210px;
@@ -36,6 +67,7 @@ img{
       padding: 15px;
       margin-right: 20px;
       margin-bottom: 10px;
+      position: relative;
       .text{
         text-align: center;
         h4{
